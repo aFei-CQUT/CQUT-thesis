@@ -3,7 +3,7 @@
 %%% 使用前请先阅读使用文档和用户协议，内有详细介绍。Happy Texing! :)
 %% =======================================================
 \documentclass%
-	[type=doctor, bilinguallist=apart,]{cquthesis}%
+	[type=bachelor, bilinguallist=apart, printmode=auto, AutoFakeBold, UTF8 ]{cquthesis}%
 % 可用选项：
 % type=[bachelor|master|doctor],      % 必选，毕业论文类型，以下项目不填时为默认
 % liberalformat,                      % 可选，仅适用本科生，使用文学类论文标题格式，默认未打开
@@ -18,6 +18,11 @@
 % 这样可以防止main.tex太过臃肿。
 \usepackage{cquthesis}
 
+% 忽略 LaTeX 关于盒子过“坏”的警告，值越高容忍度越大
+\hbadness=10000		% 水平
+\vbadness=10000		% 竖直
+
+
 % 定义所有的图片文件在 figures 子目录下
 \graphicspath{{figures/}}
 
@@ -25,6 +30,8 @@
 %\includeonly{contents/experiment,contents/analysis,}
 
 \begin{document}
+
+{\bfseries\kaishu}
 
 \input{contents/cover}
 \makecover %%% 封面部分
